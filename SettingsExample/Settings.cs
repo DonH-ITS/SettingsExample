@@ -40,6 +40,5 @@ namespace SettingsExample
                 writer.Write(jsonstring);
             }
         }
-}
     }
 }
