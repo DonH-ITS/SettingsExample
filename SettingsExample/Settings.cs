@@ -32,5 +32,14 @@ namespace SettingsExample
             GRID_COLOUR1 = "#2B0B98";
             GRID_COLOUR2 = "#FB0B98";
         }
+
+        public void SaveJson() {
+            string jsonstring = JsonSerializer.Serialize(this);
+            string filename = System.IO.Path.Combine(FileSystem.Current.AppDataDirectory, "settings.json");
+            using (StreamWriter writer = new StreamWriter(filename)) {
+                writer.Write(jsonstring);
+            }
+        }
+}
     }
 }
